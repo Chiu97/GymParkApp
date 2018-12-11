@@ -19,6 +19,7 @@
         <activity android:name=".mainContent" />
         <activity android:name=".register" />
         <activity android:name=".newsDisplay" />
+        <activity android:name="TrainerListActivity"></activity>
     </application>
 
 </manifest>

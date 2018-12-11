@@ -13,11 +13,19 @@ public class mainContent extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_content);
         Button gotoNews=(Button) findViewById(R.id.NewsBtn);
+        Button gotoTrainerList=(Button) findViewById(R.id.TrainerBtn);
         gotoNews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent gotoNewsReview=new Intent(mainContent.this,newsDisplay.class);
                 startActivity(gotoNewsReview);
+            }
+        });
+        gotoTrainerList.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent gotoTrainerActivity=new Intent(mainContent.this,TrainerListActivity.class);
+                startActivity(gotoTrainerActivity);
             }
         });
     }
