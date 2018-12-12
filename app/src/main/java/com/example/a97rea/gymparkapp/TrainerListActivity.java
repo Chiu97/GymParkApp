@@ -1,11 +1,16 @@
 package com.example.a97rea.gymparkapp;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +31,7 @@ public class TrainerListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_trainer_list);
         recyclerView=findViewById(R.id.trainer_list_view);
         layoutManager=new LinearLayoutManager(this);
-        adapter=new TrainerAdapter(list);
+        adapter=new TrainerAdapter(list,this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(layoutManager);
     }

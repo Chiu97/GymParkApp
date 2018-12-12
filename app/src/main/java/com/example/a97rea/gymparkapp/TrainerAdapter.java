@@ -1,7 +1,13 @@
 package com.example.a97rea.gymparkapp;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -15,7 +21,9 @@ import java.util.zip.Inflater;
 
 public class TrainerAdapter extends RecyclerView.Adapter<TrainerAdapter.TrainerHolder>{
     List<Trainer> trainerList;
-    public TrainerAdapter(List<Trainer> list){
+    private  Context context;
+    public TrainerAdapter(List<Trainer> list,Context context){
+        this.context=context;
         trainerList=list;
     }
     @NonNull
@@ -27,7 +35,7 @@ public class TrainerAdapter extends RecyclerView.Adapter<TrainerAdapter.TrainerH
     }
 
     @Override
-    public void onBindViewHolder(@NonNull TrainerHolder trainerHolder, int i) {
+    public void onBindViewHolder(@NonNull final TrainerHolder trainerHolder, int i) {
         trainerHolder.email.setText(trainerList.get(i).getEmail());
         trainerHolder.img.setImageResource(trainerList.get(i).getTrainerPic());
         trainerHolder.name.setText(trainerList.get(i).getName());
@@ -51,6 +59,15 @@ public class TrainerAdapter extends RecyclerView.Adapter<TrainerAdapter.TrainerH
             name=itemView.findViewById(R.id.trainer_name);
             email=itemView.findViewById(R.id.trainer_email);
             parent_layout=itemView.findViewById(R.id.card_view);
+            phone.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String phone_no=phone.getText().toString();
+                    Intent intent=new Intent(Intent.ACTION_CALL);
+                    intent.setData(Uri.parse("tel:"+phone_no));
+                    context.startActivity(intent);
+                }
+            });
         }
     }
 

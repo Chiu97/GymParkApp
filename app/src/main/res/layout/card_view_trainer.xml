@@ -55,7 +55,7 @@
             android:layout_marginStart="156dp"
             android:layout_marginLeft="156dp"
             android:layout_marginTop="8dp"
-            android:text="Phone:10086"
+            android:text="10086"
             app:layout_constraintStart_toEndOf="@+id/trainer_picture"
             app:layout_constraintTop_toTopOf="parent" />
 
