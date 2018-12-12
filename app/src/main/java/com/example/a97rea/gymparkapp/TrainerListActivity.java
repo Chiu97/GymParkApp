@@ -14,13 +14,14 @@ public class TrainerListActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     TrainerAdapter adapter;
     RecyclerView.LayoutManager layoutManager;
-    List<Trainer> list=new ArrayList<>();
+    List<Trainer> list;
     //here we initialize four private trainer for use
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        list=new ArrayList<>();
         this.initTrainerList();
         setContentView(R.layout.activity_trainer_list);
         recyclerView=findViewById(R.id.trainer_list_view);

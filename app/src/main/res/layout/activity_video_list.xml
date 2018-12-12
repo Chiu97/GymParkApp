@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".VideoList">
+    <RelativeLayout
+        android:id="@+id/mountain_video_part"
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="0dp"
+            android:src="@drawable/mountaindog" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="81dp"
+            android:text="想要训练计划以及更多干货，或者与我进行健身方面的交流♂,EmailMe:MadridChiu@gmail.com" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/dumbbell_video_part"
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="0dp"
+            android:src="@drawable/dumbbells" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="81dp"
+            android:text="想要训练计划以及更多干货，或者与我进行健身方面的交流♂,EmailMe:MadridChiu@gmail.com" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/back_video_part"
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="0dp"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="81dp"
+            android:text="想要训练计划以及更多干货，或者与我进行健身方面的交流♂,EmailMe:MadridChiu@gmail.com" />
+    </RelativeLayout>
+</LinearLayout>

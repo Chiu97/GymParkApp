@@ -1,10 +1,12 @@
 package com.example.a97rea.gymparkapp;
 
 import android.content.Intent;
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class mainContent extends AppCompatActivity {
 
@@ -14,6 +16,7 @@ public class mainContent extends AppCompatActivity {
         setContentView(R.layout.activity_main_content);
         Button gotoNews=(Button) findViewById(R.id.NewsBtn);
         Button gotoTrainerList=(Button) findViewById(R.id.TrainerBtn);
+        ImageView videoView=findViewById(R.id.video_image_view);
         gotoNews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -26,6 +29,13 @@ public class mainContent extends AppCompatActivity {
             public void onClick(View v){
                 Intent gotoTrainerActivity=new Intent(mainContent.this,TrainerListActivity.class);
                 startActivity(gotoTrainerActivity);
+            }
+        });
+        videoView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent gotoTrainingVideoActivity=new Intent(mainContent.this,VideoList.class);
+                startActivity(gotoTrainingVideoActivity);
             }
         });
     }

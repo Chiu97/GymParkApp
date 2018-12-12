@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">GymParkApp</string>
+    <string name="mountaindog">
+        https://v.hoopchina.com.cn/hupuapp/bbs/73384976520612/thread_73384976520612_20181211162343_29281.mp4?auth_key=1544598265-0-0-ce043a9fa82b8e07e2264a85a088be14
+    </string>
+    <string name="back_importance">
+        https://v.hoopchina.com.cn/hupuapp/bbs/50490089515556/thread_50490089515556_20181018164847_46513.mp4?auth_key=1544608008-0-0-d2af7ea88892dd45e95475fb00c274c3
+    </string>
+    <string name="dumbbells">
+        https://v.hoopchina.com.cn/hupuapp/bbs/73384976520612/thread_73384976520612_20181120175431_85414.mp4?auth_key=1544590486-0-0-d5243522cc5ad0d868c38e2787a8e53d
+    </string>
 </resources>

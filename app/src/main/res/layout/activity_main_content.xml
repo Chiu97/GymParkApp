@@ -8,7 +8,7 @@
     tools:context=".mainContent">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/video_image_view"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_weight="1"
