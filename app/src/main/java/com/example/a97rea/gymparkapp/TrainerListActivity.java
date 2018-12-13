@@ -1,5 +1,6 @@
 package com.example.a97rea.gymparkapp;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -15,7 +16,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TrainerListActivity extends AppCompatActivity {
+public class TrainerListActivity extends Activity {
     RecyclerView recyclerView;
     TrainerAdapter adapter;
     RecyclerView.LayoutManager layoutManager;

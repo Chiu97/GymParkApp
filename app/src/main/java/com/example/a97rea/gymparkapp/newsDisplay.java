@@ -1,9 +1,15 @@
 package com.example.a97rea.gymparkapp;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+
+import com.example.a97rea.gymparkapp.SQLiteTool.DbHelper;
+import com.example.a97rea.gymparkapp.SQLiteTool.NewsTable;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,10 +18,32 @@ public class newsDisplay extends AppCompatActivity {
     private MyAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private List<News> mList=new ArrayList<>();
+    private String[] projection={
+            NewsTable.NewsEntry.COLUMN_NAME_TITLE,
+            NewsTable.NewsEntry.COLUMN_NAME_IMAGE
+    };
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initNews();
+        SQLiteDatabase db;
+        DbHelper dbHelper=new DbHelper(this);
+//        db=dbHelper.getWritableDatabase();
+/*        dbHelper.onUpgrade(db,1,1);
+//        for(News news:mList)
+//          dbHelper.insertItem(db,news.title,news.imageID);
+//
+//        initNews();
+*/
+
+        db=dbHelper.getReadableDatabase();
+        Cursor cursor=db.query(NewsTable.NewsEntry.TABLE_NAME,projection,null,null,null,null,null);
+        while(cursor.moveToNext()){
+            News news;
+            String title=cursor.getString(cursor.getColumnIndex(NewsTable.NewsEntry.COLUMN_NAME_TITLE));
+            int imageID=cursor.getInt(cursor.getColumnIndex(NewsTable.NewsEntry.COLUMN_NAME_IMAGE));
+            news=new News(title,imageID);
+            mList.add(news);
+        }
         setContentView(R.layout.activity_news_display);
         mRecyclerView=findViewById(R.id.my_recycler_view);
         mLayoutManager=new LinearLayoutManager(this);
