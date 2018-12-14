@@ -45,6 +45,7 @@ public class MainActivity extends Activity {
         if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.CALL_PHONE}, 123);
         }
+        flag=false;
         Login=(Button) findViewById(R.id.Login);
         Register=(Button) findViewById(R.id.Register);
         UserName_input=findViewById(R.id.UserName_INPUT);
@@ -53,7 +54,6 @@ public class MainActivity extends Activity {
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                flag=false;
                 String name=UserName_input.getText().toString();
                 String password=Password_input.getText().toString();
                 BmobQuery<AppUser> query=new BmobQuery<AppUser>();
@@ -64,12 +64,13 @@ public class MainActivity extends Activity {
                     public void done(List<AppUser> list, BmobException e) {
                         if(e==null){
                             flag=true;
+                          //  toast("成功登录");
                         }
                         else
                             toast("没有查询到您的账户信息");
                     }
                 });
-                if(flag){
+                if(flag==true){
                     Intent gotoMainContent=new Intent(MainActivity.this,mainContent.class);
                     startActivity(gotoMainContent);
                 }
