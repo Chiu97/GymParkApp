@@ -25,15 +25,15 @@ public class newsDisplay extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        initNews();
         SQLiteDatabase db;
         DbHelper dbHelper=new DbHelper(this);
 //        db=dbHelper.getWritableDatabase();
-/*        dbHelper.onUpgrade(db,1,1);
+//        dbHelper.onUpgrade(db,1,1);
 //        for(News news:mList)
 //          dbHelper.insertItem(db,news.title,news.imageID);
-//
+
 //        initNews();
-*/
 
         db=dbHelper.getReadableDatabase();
         Cursor cursor=db.query(NewsTable.NewsEntry.TABLE_NAME,projection,null,null,null,null,null);
