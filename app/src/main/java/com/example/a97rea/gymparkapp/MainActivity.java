@@ -9,13 +9,20 @@ import android.support.v4.content.ContextCompat;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.List;
+
 import cn.bmob.v3.Bmob;
+import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.exception.BmobException;
-import cn.bmob.v3.listener.SaveListener;
+import cn.bmob.v3.listener.FindListener;
 
 public class MainActivity extends Activity {
+    EditText UserName_input,Password_input;
+    Button Login,Register;
+    Boolean flag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,30 +36,45 @@ public class MainActivity extends Activity {
                 PackageManager.PERMISSION_GRANTED)
             ActivityCompat.requestPermissions(
                     MainActivity.this,new String[]{Manifest.permission.READ_PHONE_STATE},2);
+        if(ContextCompat.checkSelfPermission(MainActivity.this,Manifest.permission.ACCESS_NETWORK_STATE)!=
+                PackageManager.PERMISSION_GRANTED)
+            ActivityCompat.requestPermissions(MainActivity.this,new String[]
+                    {Manifest.permission.ACCESS_NETWORK_STATE},3);
         Bmob.initialize(this,"05a5688c588c2eeb11e5160168093dfd");
-//        BmobQuery<User> bmobQuery = new BmobQuery<User>();
-//        bmobQuery.getObject("MoCl777K", new QueryListener<User>() {
-//            @Override
-//            public void done(User user, BmobException e) {
-//                if(e==null){
-//                    Toast.makeText(getApplicationContext(),"查询成功",Toast.LENGTH_LONG);
-//                }else{
-//                    Toast.makeText(getApplicationContext(),"查询失败",Toast.LENGTH_LONG);
-//                }
-//            }
-//        });
         setContentView(R.layout.activity_main);
         if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.CALL_PHONE}, 123);
         }
-        Button Login=(Button) findViewById(R.id.Login);
-        Button Register=(Button) findViewById(R.id.Register);
+        Login=(Button) findViewById(R.id.Login);
+        Register=(Button) findViewById(R.id.Register);
+        UserName_input=findViewById(R.id.UserName_INPUT);
+        Password_input=findViewById(R.id.Password_INPUT);
         //set an listener on Login Button to jump to the mainContent
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent gotoMainContent=new Intent(MainActivity.this,mainContent.class);
-                startActivity(gotoMainContent);
+                flag=false;
+                String name=UserName_input.getText().toString();
+                String password=Password_input.getText().toString();
+                BmobQuery<AppUser> query=new BmobQuery<AppUser>();
+                query.addWhereEqualTo("name",name);
+                query.addWhereEqualTo("password",password);
+                query.findObjects(new FindListener<AppUser>() {
+                    @Override
+                    public void done(List<AppUser> list, BmobException e) {
+                        if(e==null){
+                            flag=true;
+                        }
+                        else
+                            toast("没有查询到您的账户信息");
+                    }
+                });
+                if(flag){
+                    Intent gotoMainContent=new Intent(MainActivity.this,mainContent.class);
+                    startActivity(gotoMainContent);
+                }
+                else
+                    Toast.makeText(getApplicationContext(),"Your username or password is wrong",Toast.LENGTH_LONG).show();
             }
         });
         Register.setOnClickListener(new View.OnClickListener() {
@@ -63,5 +85,8 @@ public class MainActivity extends Activity {
                 startActivity(gotoRegister);
             }
         });
+    }
+    public void toast(String msg){
+        Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_LONG).show();
     }
 }
