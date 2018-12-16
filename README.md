@@ -97,7 +97,7 @@ public class DumbbellVideo extends AppCompatActivity {
 ![call_phone](./GymParkAppImages/call_view.png)  
   
 ## Assignment 4
-把trainer information意义articles离线储存使用的是SQLite数据库
+把trainer information以及articles离线储存使用的是SQLite数据库
 代码过程参考的也是安卓官方给的教程
 创建entry(不知道怎么表达,大概就是一个类用于存储表的各项数据,类似于metadata之类的),创建DBHelper,然后实际在Activity调用
 下面是初始化以及插入的一些代码:  
