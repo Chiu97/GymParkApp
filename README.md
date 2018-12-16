@@ -4,4 +4,4 @@
 # 应用名称：GymParkApp
 ### Email: Madridchiu@gmail.com or 16301056@bjtu.edu.cn
 ## Assignment 1
-
+[UI Dashboard](./GymParkAppImages/dashboard.png)
