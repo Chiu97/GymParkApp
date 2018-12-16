@@ -37,6 +37,46 @@ private boolean isValidEmail(CharSequence target) {
    return !TextUtils.isEmpty(target) && android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
 }
 ```
-在确认用户输入的表格各项格式正确后,同样的,我们把数据发给Bmob,然后存进数据库.
+在确认用户输入的表格各项格式正确后,同样的,我们把数据发给Bmob,然后存进数据库.  
+![UI_Trainer](./GymParkAppImages/trainer_list)  
+我们在这里使用了CardView Layout,忘记了使用RecyclerView不过我们在NewsDisplay中采用了RecyclerView
+虽然有点诡异,求给分
+
+## Assignment 3
+下面是视频播放列表和视频实际播放:  
+
+![Video_List_View](./GymParkAppImages/video_list_view.png)
+![Video_View](./GymParkAppImages/video_view.png)
+对于视频播放功能,VideoView好像支持RTSP流的播放,不支持普通我们平时看到的http,这就很懵逼了
+谷歌后发现的RTSP流结果只有youtube的,没有关于优酷之类的,脑壳痛
+然后我发现虎扑上一些视频是可以用VideoView播放的,然后我很开心的就用虎扑的视频链接来播放视频了
+代码如下:  
+```java
+public class DumbbellVideo extends AppCompatActivity {
+    VideoView videoView;
+    String url;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_dumbbell_video);
+        url=getString(R.string.dumbbells);
+        Uri uri=Uri.parse(url);
+        videoView=findViewById(R.id.dumbbell_video);
+        MediaController mc=new MediaController(this);
+        mc.setAnchorView(videoView);
+        videoView.setMediaController(mc);
+        videoView.setVideoURI(uri);
+        videoView.start();
+    }
+}
+```
+说起来也是好笑,我竟然用了不同的Activity来展示不同的视频,其实只要在点击不同视频图片时更改VideoView中链接就行了
+算了,好歹也叫实现了
+
+关于给Trainer打电话,当然要先往Manifest上加call_phone允许
+说起permission的话一开始我以为只要往Manifest上加请求就会有或者是会自动申请请求
+结果是对于一些比较重要的permission你还得自己却确认权限并申请
+[安卓关于permission的overview](https://developer.android.com/guide/topics/permissions/overview)  
 
 
