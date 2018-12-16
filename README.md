@@ -95,5 +95,30 @@ public class DumbbellVideo extends AppCompatActivity {
 ```
 下面是CALL PHONE界面:  
 ![call_phone](./GymParkAppImages/call_view.png)  
+  
+## Assignment 4
+把trainer information意义articles离线储存使用的是SQLite数据库
+代码过程参考的也是安卓官方给的教程
+创建entry(不知道怎么表达,大概就是一个类用于存储表的各项数据,类似于metadata之类的),创建DBHelper,然后实际在Activity调用
+下面是初始化以及插入的一些代码:  
+```java
+//        initNews();
+        SQLiteDatabase db;
+        DbHelper dbHelper=new DbHelper(this);
+//        db=dbHelper.getWritableDatabase();
+//        dbHelper.onUpgrade(db,1,1);
+//        for(News news:mList)
+//          dbHelper.insertItem(db,news.title,news.imageID);
+        
+        db=dbHelper.getReadableDatabase();
+        Cursor cursor=db.query(NewsTable.NewsEntry.TABLE_NAME,projection,null,null,null,null,null);
+        while(cursor.moveToNext()){
+            News news;
+            String title=cursor.getString(cursor.getColumnIndex(NewsTable.NewsEntry.COLUMN_NAME_TITLE));
+            int imageID=cursor.getInt(cursor.getColumnIndex(NewsTable.NewsEntry.COLUMN_NAME_IMAGE));
+            news=new News(title,imageID);
+            mList.add(news);
+        }
+```
 
 
