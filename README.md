@@ -38,7 +38,7 @@ private boolean isValidEmail(CharSequence target) {
 }
 ```
 在确认用户输入的表格各项格式正确后,同样的,我们把数据发给Bmob,然后存进数据库.  
-![UI_Trainer](./GymParkAppImages/trainer_list)  
+![UI_Trainer](./GymParkAppImages/trainer_list.png)  
 我们在这里使用了CardView Layout,忘记了使用RecyclerView不过我们在NewsDisplay中采用了RecyclerView
 虽然有点诡异,求给分
 
