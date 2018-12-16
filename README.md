@@ -42,11 +42,11 @@ private boolean isValidEmail(CharSequence target) {
 我们在这里使用了CardView Layout,忘记了使用RecyclerView不过我们在NewsDisplay中采用了RecyclerView
 虽然有点诡异,求给分
 
-## Assignment 3
+## Assignment 3  
 下面是视频播放列表和视频实际播放:  
 
-![Video_List_View](./GymParkAppImages/video_list_view.png)
-![Video_View](./GymParkAppImages/video_view.png)
+![Video_List_View](./GymParkAppImages/video_list_view.png)  
+![Video_View](./GymParkAppImages/video_view.png)  
 对于视频播放功能,VideoView好像支持RTSP流的播放,不支持普通我们平时看到的http,这就很懵逼了
 谷歌后发现的RTSP流结果只有youtube的,没有关于优酷之类的,脑壳痛
 然后我发现虎扑上一些视频是可以用VideoView播放的,然后我很开心的就用虎扑的视频链接来播放视频了
@@ -78,5 +78,22 @@ public class DumbbellVideo extends AppCompatActivity {
 说起permission的话一开始我以为只要往Manifest上加请求就会有或者是会自动申请请求
 结果是对于一些比较重要的permission你还得自己却确认权限并申请
 [安卓关于permission的overview](https://developer.android.com/guide/topics/permissions/overview)  
+该APP用到的一些权限申请的代码如下:  
+```java
+        if(ContextCompat.checkSelfPermission(MainActivity.this,Manifest.permission.WRITE_EXTERNAL_STORAGE)!=
+                PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(MainActivity.this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
+        }
+        if(ContextCompat.checkSelfPermission(MainActivity.this,Manifest.permission.READ_PHONE_STATE)!=
+                PackageManager.PERMISSION_GRANTED)
+            ActivityCompat.requestPermissions(
+                    MainActivity.this,new String[]{Manifest.permission.READ_PHONE_STATE},2);
+        if(ContextCompat.checkSelfPermission(MainActivity.this,Manifest.permission.ACCESS_NETWORK_STATE)!=
+                PackageManager.PERMISSION_GRANTED)
+            ActivityCompat.requestPermissions(MainActivity.this,new String[]
+                    {Manifest.permission.ACCESS_NETWORK_STATE},3);
+```
+下面是CALL PHONE界面:  
+![call_phone](./GymParkAppImages/call_view.png)  
 
 
