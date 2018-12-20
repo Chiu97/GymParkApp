@@ -1,5 +1,10 @@
 <resources>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="app_name">GymParkApp</string>
+    <string name="my_email">
+        madridchiu@gmail.com
+    </string>
     <string name="mountaindog">
         https://v.hoopchina.com.cn/hupuapp/bbs/73384976520612/thread_73384976520612_20181211162343_29281.mp4?auth_key=1544598265-0-0-ce043a9fa82b8e07e2264a85a088be14
     </string>

@@ -18,6 +18,7 @@ public class mainContent extends AppCompatActivity {
         Button gotoNews=(Button) findViewById(R.id.NewsBtn);
         Button gotoTrainerList=(Button) findViewById(R.id.TrainerBtn);
         ImageView videoView=findViewById(R.id.video_image_view);
+        Button nav_test=(Button) findViewById(R.id.nav_test);
         gotoNews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,6 +38,13 @@ public class mainContent extends AppCompatActivity {
             public void onClick(View v) {
                 Intent gotoTrainingVideoActivity=new Intent(mainContent.this,VideoList.class);
                 startActivity(gotoTrainingVideoActivity);
+            }
+        });
+        nav_test.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent gotoNavTestActivity=new Intent(mainContent.this,navigationBarActivity.class);
+                startActivity(gotoNavTestActivity);
             }
         });
     }

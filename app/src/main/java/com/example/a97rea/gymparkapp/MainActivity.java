@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
@@ -18,11 +19,10 @@ import cn.bmob.v3.Bmob;
 import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
-
 public class MainActivity extends Activity {
     EditText UserName_input,Password_input;
     Button Login,Register;
-    boolean flag;
+    Boolean flag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,11 +62,11 @@ public class MainActivity extends Activity {
                 query.findObjects(new FindListener<AppUser>() {
                     @Override
                     public void done(List<AppUser> list, BmobException e) {
-                        if(e==null){
+                        if(e==null&&list.get(0)!=null){
                             flag=true;
-                            toast("成功登录");
                             Intent gotoMainContent=new Intent(MainActivity.this,mainContent.class);
                             startActivity(gotoMainContent);
+                            toast("成功登录");
                         }
                         else {
                             toast("您输入的账户名或者密码有误");

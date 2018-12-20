@@ -39,24 +39,24 @@ public class TrainerListActivity extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         list=new ArrayList<>();
-//        this.initTrainerList();
+        this.initTrainerList();
         SQLiteDatabase db;
         TrainerHelper helper=new TrainerHelper(this);
-//        db=helper.getWritableDatabase();
-//        for(Trainer trainer:list)
-//            helper.insertItem(db,trainer.getName(),trainer.getPhoneNumber(),trainer.getEmail(),trainer.getTrainerPic());
-        db=helper.getReadableDatabase();
-        Cursor cursor=db.query(TrainerTable.TrainerEntry.TABLE_NAME,projection,null,null,null,null,null);
-        while(cursor.moveToNext()){
-            String name,phone,email;
-            int pic;
-            name=cursor.getString(cursor.getColumnIndex(TrainerTable.TrainerEntry.COLUMN_NAME));
-            phone=cursor.getString(cursor.getColumnIndex(TrainerTable.TrainerEntry.COLUMN_PHONE));
-            email=cursor.getString(cursor.getColumnIndex(TrainerTable.TrainerEntry.COLUMN_EMAIL));
-            pic=cursor.getInt(cursor.getColumnIndex(TrainerTable.TrainerEntry.COLUMN_PIC));
-            Trainer trainer=new Trainer(name,phone,email,pic);
-            list.add(trainer);
-        }
+        db=helper.getWritableDatabase();
+        for(Trainer trainer:list)
+            helper.insertItem(db,trainer.getName(),trainer.getPhoneNumber(),trainer.getEmail(),trainer.getTrainerPic());
+//        db=helper.getReadableDatabase();
+//        Cursor cursor=db.query(TrainerTable.TrainerEntry.TABLE_NAME,projection,null,null,null,null,null);
+//        while(cursor.moveToNext()){
+//            String name,phone,email;
+//            int pic;
+//            name=cursor.getString(cursor.getColumnIndex(TrainerTable.TrainerEntry.COLUMN_NAME));
+//            phone=cursor.getString(cursor.getColumnIndex(TrainerTable.TrainerEntry.COLUMN_PHONE));
+//            email=cursor.getString(cursor.getColumnIndex(TrainerTable.TrainerEntry.COLUMN_EMAIL));
+//            pic=cursor.getInt(cursor.getColumnIndex(TrainerTable.TrainerEntry.COLUMN_PIC));
+//            Trainer trainer=new Trainer(name,phone,email,pic);
+//            list.add(trainer);
+//        }
         setContentView(R.layout.activity_trainer_list);
         recyclerView=findViewById(R.id.trainer_list_view);
         layoutManager=new LinearLayoutManager(this);
@@ -66,7 +66,7 @@ public class TrainerListActivity extends Activity {
     }
 
     public void initTrainerList(){
-        Trainer trainer1=new Trainer("Shark","10001","Shark@me.com",R.drawable.shark);
+        Trainer trainer1=new Trainer("Shark","10001","Shark@me.com",R.drawable.pic01);
         Trainer trainer2=new Trainer("Shawn","10003289","Shawn@me.com",R.drawable.shawn);
         Trainer trainer3=new Trainer("Lil","12839798","Hill@me.com",R.drawable.lil);
         Trainer trainer4=new Trainer("Ball","123897","Kanye@me.com",R.drawable.ball);
