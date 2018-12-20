@@ -121,7 +121,7 @@ public class DumbbellVideo extends AppCompatActivity {
             mList.add(news);
         }
 ```
-下面是文章展示,采用的是recyclerview  
-![News_Display](./GymParkAppImages/news_recyclerview.png)
+下面是文章展示,采用的是recyclerview+cardview
+![News_Display](./GymParkAppImages/newsdisplay.png)
 
 
