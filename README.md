@@ -131,10 +131,12 @@ public class DumbbellVideo extends AppCompatActivity {
 谷歌了一下,发现一个叫做firebase的东西意外的好用,只需要申请应用关联,然后就可以轻松的应用模板来完成一系列的操作了,
 甚至连gradle都可以不用自己去配置,只需要打开android studio自带的firebase然后进去让它自己配置就好了.  
 下面是一些完成后的图片:  
-![showNewLogin](./GymParkAppImage/loginWithGoogle.png)
-![use google account](./GymParkAppImage/chooseAccount.png)
-![firebase console](./GymParkAppImage/firebaseAuthentification.png)  
+![showNewLogin](./GymParkAppImages/loginWithGoogle.png)  
 
-# <font color=red>菜鸡写代码不容易,求老师多给点分吧,嘤嘤嘤😭😭😭</font>
+![use google account](./GymParkAppImages/chooseAccount.png)  
+
+![firebase console](./GymParkAppImages/firebaseAuthentification.png)  
+
+<font color=red>菜鸡写代码不容易,求老师多给点分吧,嘤嘤嘤😭😭😭</font>
 
 
