@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "393362427148",
+    "firebase_url": "https://gymparkapp.firebaseio.com",
+    "project_id": "gymparkapp",
+    "storage_bucket": "gymparkapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:393362427148:android:55b20a15f1f67a10",
+        "android_client_info": {
+          "package_name": "com.example.a97rea.gymparkapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "393362427148-p497ug6kffobke0e2pcaapkh82tmhcuq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.a97rea.gymparkapp",
+            "certificate_hash": "7ac0f271151f6c915f2b6df42b4a51670aa0decd"
+          }
+        },
+        {
+          "client_id": "393362427148-3rrqbq4kllv0j1kml5pep1414jehpq79.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxqNaeSaL2fbjNI7tUIcWwtLGUKf51eZM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "393362427148-3rrqbq4kllv0j1kml5pep1414jehpq79.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
