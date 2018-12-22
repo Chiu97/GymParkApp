@@ -137,7 +137,7 @@ public class DumbbellVideo extends AppCompatActivity {
 
 ![firebase console](./GymParkAppImages/firebaseAuthentication.png)  
 
-<font color=red>菜鸡写代码不容易,求老师多给点分吧,嘤嘤嘤😭😭😭</font>
+<font color=white>菜鸡写代码不容易,求老师多给点分吧,嘤嘤嘤😭😭😭</font>
 <font color=red>菜鸡写代码不容易,求老师多给点分吧,嘤嘤嘤😭😭😭</font>
 
 
