@@ -123,6 +123,18 @@ public class DumbbellVideo extends AppCompatActivity {
 ```
 下面是文章展示,采用的是recyclerview+cardview  
 
-![News_Display](./GymParkAppImages/newsdisplay.png)
+![News_Display](./GymParkAppImages/newsdisplay.png)  
+
+## Assignment 5
+终于也来到了最后一个Assignment,这次的Assignment难度也不大,就是有些麻烦.  
+刚开始也是打算向微信那边申请的,但是申请等了三天一点回复也没有,想想也不能坐以待毙,决定找别的途径.
+谷歌了一下,发现一个叫做firebase的东西意外的好用,只需要申请应用关联,然后就可以轻松的应用模板来完成一系列的操作了,
+甚至连gradle都可以不用自己去配置,只需要打开android studio自带的firebase然后进去让它自己配置就好了.  
+下面是一些完成后的图片:  
+![showNewLogin](./GymParkAppImage/loginWithGoogle.png)
+![use google account](./GymParkAppImage/chooseAccount.png)
+![firebase console](./GymParkAppImage/firebaseAuthentification.png)  
+
+# <font color=red>菜鸡写代码不容易,求老师多给点分吧,嘤嘤嘤😭😭😭</font>
 
 
